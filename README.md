@@ -1,33 +1,41 @@
 # HOW TO DEPLOY A WEBSITE ON UBUNTU WITH APACHE2
 
-#@ Domain And Hosting
+## Domain And Hosting
 - Domain: take a domain name that you want for your website, there are a lot of suppliers you can choose
 - Hosting: a lot of choices for you, I recommend an Ubuntu server because I write this doc for Ubuntu
 - Point your domain name to your server ip: just create an A record from the supplier domain name management
 
 ## Installing Apache
-- sudo apt update
-- sudo apt install apache2
+```
+sudo apt update
+sudo apt install apache2
+```
 - Apache comes with a basic site, its content in /var/www/html
-- To test apache2 works or not: http://127.0.0.1/ or http://localhost/ or http://<Your LAN ip>/ or http://<Your Public IP>/
+- To test apache2 works or not: http://127.0.0.1/ or http://localhost/ or http://Your-LAN-IP>/ or http://Your-Public-IP/
 
 ## Deploy Your Website
 - Put your website folder in the /var/www/ directory (make sure you have an index.html in this folder)
 - Make your own config file:
   + cd /etc/apache2/sites-available/
-  + sudo cp 000-default.conf <your-site-name>.conf
+  + sudo cp 000-default.conf your-site-name.conf
 - Edit your configuration:
-  + sudo nano <your-site-name>.conf 
-  + <VirtualHost *:80>
-		#...
-        ServerAdmin <your email>
-        ServerName <your domain name> # usually start with: www.abc.com
-        DocumentRoot /var/www/<your website directory>
-		#...
-	</VirtualHost>
+  ```
+  sudo nano your-site-name.conf
+  ```
+  ```
+  <VirtualHost *:80>
+	#...
+	ServerAdmin your-email
+	ServerName your-domain-name # usually start with: www.abc.com
+	DocumentRoot /var/www/your-website-directory>
+	#...
+  </VirtualHost>
+  ```
 - Activate your website:
-  + sudo a2ensite <your-site-name>.conf
-  + service apache2 reload
+  ```
+  sudo a2ensite <your-site-name>.conf
+  service apache2 reload
+  ```
 
 ## Add SSL
 #### Copy Requirement files to Ubuntu (store anywhere what you want to)

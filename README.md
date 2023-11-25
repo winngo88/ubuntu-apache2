@@ -7,14 +7,14 @@
 
 ## Add SSL
 ### Copy Requirement files to Ubuntu (store anywhere what you want to)
-- private.key (copy this private key from email you have received from matbao, crete a new file *.key file)
+- private.key (the key was generated to register SSL)
 - RootCA.crt: this file received from the SSL supplier
 - Domain.crt: this file received from the SSL supplier (Sectigo is *.pem file)
 ### Turm on Apache2 SSL:
-- sudo run command: sudo a2enmod ssl
-- sudo service apache2 restart
+- Turn SSL module: ``` sudo a2enmod ssl ```
+- Restart apache2: ``` sudo service apache2 restart ```
 ### Edit Domain.conf file
-  + Open <your domain>.conf in the /etc/apache2/sites-enabled/ directory
+  + Open your-domain.conf file in the /etc/apache2/sites-enabled/ directory
   + Edit follow:
     ```
 	<VirtualHost *:443>

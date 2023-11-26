@@ -1,5 +1,5 @@
 # HOW TO DEPLOY A WEBSITE ON UBUNTU WITH APACHE2
-
+Reference: https://ubuntu.com/tutorials/install-and-configure-apache#5-activating-virtualhost-file
 ## Domain And Hosting
 - Domain: take a domain name that you want for your website, there are a lot of suppliers you can choose
 - Hosting: a lot of choices for you, I recommend an Ubuntu server because I write this doc for Ubuntu
